@@ -30,4 +30,15 @@ public abstract class Employee {
     public String getPosition() {
         return position;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        if (this == obj) {
+            return true;
+        }
+        Employee other = (Employee) obj;
+        return this.id == other.id;
+    }
 }
